@@ -6,6 +6,11 @@ var contentInput = document.getElementById('exampleFormControlTextareaConetnt');
 var tableView = document.getElementById('tableView');
 var mainBtnApp = document.getElementById('mainBtnApp');
 
+if (localStorage.getItem('listOfNotes')) {
+    notesList = JSON.parse(localStorage.getItem('listOfNotes'));
+    readNotesList();
+}
+
 function btnApp() {
     if (mainBtnApp.innerText === 'save') {
         createNewNote();
@@ -25,6 +30,7 @@ function createNewNote(){
     //push object into array
     notesList.push(noteObject);
     
+    localStorage.setItem('listOfNotes', JSON.stringify(notesList));
     //invoke read function
     readNotesList();
 
@@ -51,6 +57,9 @@ function readNotesList(){
 
 function deleteNoteFromList(index){
     notesList.splice(index,1);
+
+    localStorage.setItem('listOfNotes', JSON.stringify(notesList));
+
     readNotesList();
 }
 
@@ -84,6 +93,7 @@ function updateNoteInList() {
     // notesList[selectedNote] = noteObject;
 
     notesList.splice(selectedNote,1,noteObject);
+    localStorage.setItem('listOfNotes', JSON.stringify(notesList));
 
     readNotesList();
 

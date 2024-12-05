@@ -208,10 +208,48 @@ console.log(table.sellers[1].country);
 
 --------------------------------------
 
+Local Storage
+
+- size limited by 5 MB
+- save data in web browser
+
+**local storage function
+
+    localStorage.setItem('gender','female')
+    localStorage.removeItem('gender')
+    localStorage.clear()
+
+** convert object/array to string
+JSON.stringify(object)
+
+** convert object/array as string to orginal 
+JSON.parse(object/array as string)
+
+**
+DOM (Document object Module)
+
+how catch tags in html using js?
+
+--ByID => single element => document.getElementById('demo')
+--ByTag => htmlcollection (array) => document.getElementsByTagName('p')
+--ByClass => htmlcollection => document.getElementsByClassName('demo')
+--ByName => NodeList => document.getElementsByName('demo')
+
+--QuerySelector "Css Notion"
+ **document.querySelector('.demo')
+ **document.querySelectorAll('.demo')
 */
 
 
+var element =  document.querySelector('p');
 
+var warning = true;
+
+if (warning) {
+    element.classList.add('text-danger','bg-warning','p-3','rounded-3','shadow-lg')
+} else{
+    element.classList.add('text-light','bg-danger','p-3','rounded-3','shadow-lg')
+}
 
 
 
