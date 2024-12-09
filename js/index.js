@@ -241,19 +241,46 @@ how catch tags in html using js?
 */
 
 
-var btn = document.querySelector('#btn-submit');
+// var btn = document.querySelector('#btn-submit');
 
-var toast = document.querySelector('.myToast');
+// var toast = document.querySelector('.myToast');
 
-btn.addEventListener('click',function(){
+// btn.addEventListener('click',function(){
+
+//     toast.classList.add('adjecnet-right')
+
+//     setTimeout(function(){
+//         toast.classList.remove('adjecnet-right');
+//     },4000)
     
-    toast.classList.add('adjecnet-right')
+// })
 
-    setTimeout(function(){
-        toast.classList.remove('adjecnet-right');
-    },4000)
+//^[a-z]{1,}[A-Za-z\d]{1,}@(gmail||outlook||yahoo)\.com$
+
+var settingFrom = document.getElementById('settingFrom');
+var username = document.getElementById('username');
+
+settingFrom.addEventListener('submit', function(e) {
+    var regex = /^[a-zA-Z]{3,20}$/g;
+    
+    if (username.value === '' || !regex.test(username.value)) {
+        e.preventDefault();
+        username.classList.add('border-danger');
+        return;
+    }
+
+    if (username.classList.contains('border-danger')) {
+        username.classList.remove('border-danger')
+    }
+    username.classList.add('border-success')
+
     
 })
+
+
+
+
+
 
 
 
