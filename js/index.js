@@ -241,15 +241,23 @@ how catch tags in html using js?
 */
 
 
-var element =  document.querySelector('p');
+var btn = document.querySelector('#btn-submit');
 
-var warning = true;
+var toast = document.querySelector('.myToast');
 
-if (warning) {
-    element.classList.add('text-danger','bg-warning','p-3','rounded-3','shadow-lg')
-} else{
-    element.classList.add('text-light','bg-danger','p-3','rounded-3','shadow-lg')
-}
+btn.addEventListener('click',function(){
+    
+    toast.classList.add('adjecnet-right')
+
+    setTimeout(function(){
+        toast.classList.remove('adjecnet-right');
+    },4000)
+    
+})
+
+
+
+
 
 
 
