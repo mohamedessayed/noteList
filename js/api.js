@@ -1,5 +1,7 @@
 // api('https://jsonplaceholder.typicode.com/posts','GET');
 
+import getApi, {sayHello} from "./concetToApi.js";
+
 function api(url,method = 'GET'){
     var xmlHttp = new XMLHttpRequest;
     // inilization
@@ -26,11 +28,17 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 
 //other code
 
-async function api(){
-    var respose =  await fetch('https://jsonplaceholder.typicode.com/posts');
-    var posts =  await respose.json();
-    console.log(posts);
-    
-}
 
-api()
+
+// var options = {method:"GET",headers:{'Authorization':'Bearer 18f1d33d7de54a98ac018226a7a4782f'}}
+
+
+// fetch('https://newsapi.org/v2/everything?q=keyword',options)
+// .then(function(text){ return text.json()})
+// .then(function(posts){
+//     console.log(posts);
+    
+// })
+
+
+
