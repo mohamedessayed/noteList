@@ -42,3 +42,8 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 
 
 
+let url = new URLSearchParams(location.search)
+console.log(url.set('user','Mohamed Elsayed'));
+
+console.log(url.get('user'));
+
